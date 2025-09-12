@@ -15,7 +15,7 @@ test("Media da notas A1 e A2", function() {
     expect (calcularMediaAluno.Calculo(2,4,undefined)) .toBeCloseTo(3.2);
 })
 
-test("Verificando se a nota A3 é negativo", function() {
+test("Verificando se a nota A3 é negativo", function() {npm
     expect (calcularMediaAluno.Calculo).toBeDefined();
     expect (() => calcularMediaAluno.Calculo( 5,3,-5)) .toThrow("Nota a3 não pode ser negativa");
 })
