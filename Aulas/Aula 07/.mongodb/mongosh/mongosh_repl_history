@@ -1,0 +1,24 @@
+db.usuarios.find({})
+db.usuarios.uodateOne({ nome: "Luís"}, { $set: {telefone: "8 8888-8888"}})
+db.usuarios.uodateOne({ nome: "Luís"}, { $set: {telefone: "8 8888-8888"})
+db.usuarios.uodateOne({ nome: "Luís"}, { $set: {telefone: "8 8888-8888"}})
+db.usuarios.find({nome: "Luís"})
+db.usuarios.uodateOne({ nome: "Luís"}, { $set: {telefone: "8 8888-8888"}})
+db.usuarios.uodateOne({ nome: "Luís"}, { $ser: {telefone: "8 8888-8888"}})
+db.usuarios.uodateOne({ nome: "Luís"}, { $ser: {telefone: 8 8888-8888}})
+db.usuarios.find({nome: "Luís"})
+db.usuarios.find({nome: "Luis"})
+db.usuarios.find({nome: "Maria"})
+db.usuarios.find({nome: "Maria")}
+db.usuarios.find({})
+db.usuarios.insertOne({nome: "Aline", email: "Aline@gmail.com", telefone: "9 9999-9999" })
+db.usuarios.find({})
+show collections
+show collection
+show collwction
+db.usuarios.insertOne({nome: "Luís", email: "lfpcouti@gmail.com" })
+show collections
+use meubanco
+use local
+show dbs
+show tet
