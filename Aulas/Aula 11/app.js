@@ -17,6 +17,6 @@ app.use(cookieParser());
 
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-app.use('/api-docs', apidocsRouter);
+app.use('/produtos', produtosRouter);
 
 module.exports = app;

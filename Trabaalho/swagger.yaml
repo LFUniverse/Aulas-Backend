@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  title: API de Produtos
+  version: 1.0.0
+  description: Documentação da API de Produtos com autenticação JWT
+
+servers:
+  - url: http://localhost:3000
+    description: Servidor local
+
+tags:
+  - name: produtos
+    description: Endpoints para gerenciamento de produtos
+
+paths:
+  /produtos:
+    post:
+      tags:
+        - produtos
+      summary: Criar um novo produto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nome
+                - quantidade
+                - validade
+              properties:
+                nome:
+                  type: string
+                quantidade:
+                  type: number
+                validade:
+                  type: string
+      responses:
+        201:
+          description: Produto criado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Produto"
+        422:
+          description: Dados inválidos
+
+  /produtos/renovar:
+    post:
+      tags:
+        - produtos
+      summary: Renovar validade de um produto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nome
+                - validade
+              properties:
+                nome:
+                  type: string
+                validade:
+                  type: string
+      responses:
+        200:
+          description: Validade renovada
+        404:
+          description: Produto não encontrado
+
+  /produtos:
+    delete:
+      tags:
+        - produtos
+      summary: Excluir um produto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nome
+              properties:
+                nome:
+                  type: string
+      responses:
+        200:
+          description: Produto excluído
+        404:
+          description: Produto não encontrado
+
+components:
+  schemas:
+    Produto:
+      type: object
+      properties:
+        nome:
+          type: string
+        quantidade:
+          type: number
+        validade:
+          type: string
